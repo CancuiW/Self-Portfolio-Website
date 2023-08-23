@@ -1,0 +1,63 @@
+<!-- 
+@Author: Can Cui
+@Date: April 18, 2023
+@PHP Version: PHP 8.0
+@Purpose: Call the translate API and unify the navigation content of all pages.
+          Design responsive navigation to adapt for all responsive webpages.
+
+-->
+
+<nav>
+    <ul class="menu">
+            <li class="logo"><a href="./index.php?go=c1">Can Cui</a></li>
+    
+    
+           <!-- call the translate API in the nav-->
+            <li id='google_translate_element'>
+                <script src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'></script>
+                <script>
+                    function googleTranslateElementInit(){
+                        new google.translate.TranslateElement(
+                            {pageLanguage:'en'},
+                            'google_translate_element'
+
+                        );
+                    }
+                </script>
+            </li>
+   
+            <li class="item">
+                <a  href="./index.php?go=c1">Home</a>
+            </li>
+            <li class="item">
+                <a href="./index.php?go=c2">Personal Introduction</a>
+            </li>
+            <li class="item">
+                <a href="./index.php?go=c4">Skills</a>
+            </li>
+            <li class="item">
+                <a href="./index.php?go=c5">Hobbies</a>
+            </li>
+            
+            <li class="item button"><a href="./index.php?go=c3">Contact Me</a></li>
+            <li class="toggle"><span class="bars"></span></li>
+    </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $(".toggle").on("click", function() {
+                if($(".item").hasClass("active")) {
+                    $(".item").removeClass("active");
+                } else {
+                    $(".item").addClass("active");
+                }
+            })
+        });
+    </script>
+
+</nav>
+
+
+
+

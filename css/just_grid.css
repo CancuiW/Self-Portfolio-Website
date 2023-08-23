@@ -1,0 +1,57 @@
+/* 
+@Author: Can Cui 
+@Date: April 18, 2023 
+@PHP Version: PHP 8.0 
+@Purpose: The design of the overall structure
+
+*/
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 16px;
+    /* Google Font */
+    background-color: #f8f9fa;
+    font-family: 'Libre Baskerville', serif;
+}
+
+
+#wrapper {
+    width: 100vw;
+    height: 100vh;
+    /*keep the footer always at the bottom of page */
+    min-height: 100%;
+    /* mobile first as flexbox */
+    display: grid;
+    /* 3 columns with fractions */
+    grid-template-columns:  1fr;
+    /* 4 rows with auto and fraction */
+    grid-template-rows:  auto 3fr auto auto;
+
+    grid-template-areas: "menu"
+        "article "
+        "aside-1"
+        "footer";
+    /* if align-items:center ,article box will stay in the center justify-content: center;*/
+    align-items:stretch;
+    justify-content: center;
+    
+}
+
+.article {
+    padding: 5px 15px;
+    grid-area: article;
+    background-color: rgb(235, 235, 235);
+    
+}
+
+
+
+
